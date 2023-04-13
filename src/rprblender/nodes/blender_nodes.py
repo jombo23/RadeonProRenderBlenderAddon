@@ -2147,7 +2147,7 @@ class ShaderNodeMapping(NodeParser):
     def rotation(self, mapping, transpose=False):
         """ returns a vector transformed by rotation """
         # Apply rotation to transpose we flip matrix
-        rotation = - self.get_input_default('Rotation')  # must be flipped to match cycles
+        rotation = - self.get_input_value('Rotation')  # must be flipped to match cycles
         sin_x, sin_y, sin_z = map(math.sin, rotation.data)
         cos_x, cos_y, cos_z = map(math.cos, rotation.data)
 
