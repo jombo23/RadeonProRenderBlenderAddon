@@ -2148,8 +2148,8 @@ class ShaderNodeMapping(NodeParser):
         """ returns a vector transformed by rotation """
         # Apply rotation to transpose we flip matrix
         rotation = - self.get_input_value('Rotation')  # must be flipped to match cycles
-        sin_x, sin_y, sin_z = map(math.sin, rotation.data)
-        cos_x, cos_y, cos_z = map(math.cos, rotation.data)
+        sin_x, sin_y, sin_z = map(math.sin, rotation.data[0:3])
+        cos_x, cos_y, cos_z = map(math.cos, rotation.data[0:3])
 
         if transpose:
             part1 = mapping.dot3((cos_y * cos_z,
