@@ -36,7 +36,7 @@ def get_material_output_node(material):
         return None
 
     return next((node for node in material.node_tree.nodes
-                 if node.bl_idname == 'ShaderNodeOutputMaterial' and node.is_active_output),
+                 if node.bl_idname == 'ShaderNodeOutputMaterial' and node.target == 'ALL'),
                 None)
 
 
